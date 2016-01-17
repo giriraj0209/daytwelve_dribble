@@ -1,0 +1,5 @@
+%h1 All Dribbles
+
+- @posts.each do |post|
+  = link_to post.title, post
+  = time_ago_in_words(post.created_at)
