@@ -6,6 +6,7 @@ def index
 end
 
 def show
+	@comments = Comment.where(post_id: @post)
 end
 
 def new
@@ -39,6 +40,6 @@ def find_post
 	@post = Post.find(params[:id])
 end
 def post_params
-params.require(:post).permit(:title, :description, :link)
+params.require(:post).permit(:title, :description, :link, :image)
 end
 end
